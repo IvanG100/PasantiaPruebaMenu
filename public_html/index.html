@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Menus</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div id="Vertical" class="verticalnav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+         
+            <a href="#">Inicio</a>
+                <a href="#">Paraguay</a>
+                <a href="#" onclick="openNav()">Vertical </a>
+                <a href="#" onclick="openNav2()">Colapsado</a>
+              
+        </div>
+
+        <div id="colapsado" class="colapsadonav">
+            <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
+            <h3>Menu</h3>
+            <a href="#home"><i class="fa fa-fw fa-home"></i></a>
+            <a href="#services"><i class="fa fa-fw fa-wrench"></i></a>
+            <a href="#clients"><i class="fa fa-fw fa-user"></i></a>
+            <a href="#contact"><i class="fa fa-fw fa-envelope"></i></a>
+        </div>
+
+        <div id="horizontal">
+
+
+            <div class="topnav" id="mytopnav">
+                <a href="#">Inicio</a>
+                <a href="#">Paraguay</a>
+                <a href="#" onclick="openNav()">Vertical </a>
+                <a href="#" onclick="openNav2()">Colapsado</a>
+                <div class="dropdown">
+                    <button class="dropbtn">Viajes <i class="fa fa-caret-down"></i></button>
+                    <div class="contenido">
+                        <a href="#">Brasil</a>
+                        <a href="#">Chile</a>
+                        <a href="#">Peru</a>
+                    </div>
+                </div>
+
+
+                <a href="javascript:void(0);" class="icon" onclick="responsive()"><i class="fa fa-bars"></i></a>
+            </div>
+
+
+            <h2>Paraguay</h2>
+            <p>Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque.</p>
+            <p>Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque.</p>
+            <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo.</p>
+            <p>Un poco de texto de relleno aqui</p>
+        </div>
+
+        <script>
+            //Funcion responsive del menu horizontal
+            function responsive() {
+                var x = document.getElementById("mytopnav");
+                if (x.className === "topnav") {
+                    x.className += " responsive";
+                } else {
+                    x.className = "topnav";
+                }
+            }
+
+            //Funcion para desplegar el menu vertical
+            function openNav() {
+                closeNav2();
+                document.getElementById("mytopnav").style.display = "none";
+                document.getElementById("Vertical").style.width = "200px";
+                document.getElementById("horizontal").style.marginLeft = "200px";
+                
+
+            }
+
+            //Funcion para cerrar el menu vertical
+            function closeNav() {
+                document.getElementById("Vertical").style.width = "0";
+                document.getElementById("horizontal").style.marginLeft = "0";
+                document.getElementById("mytopnav").style.display = "block";
+            }
+
+            //Funcion para desplegar el menu colapsado
+            function openNav2() {
+                closeNav();
+                document.getElementById("mytopnav").style.display = "none";
+                document.getElementById("colapsado").style.width = "120px";
+                document.getElementById("horizontal").style.marginLeft = "120px";
+               
+
+            }
+
+            //Funcion para cerrar el menu colapsado
+            function closeNav2() {
+              
+        document.getElementById("colapsado").style.width = "0";
+          
+                document.getElementById("horizontal").style.marginLeft = "0";
+          
+                document.getElementById("mytopnav").style.display = "block";
+            }
+        </script>
+    </body>
+</html>
